@@ -3,10 +3,11 @@ const { Schema } = mongoose;
 
 const MessageSchema =mongoose.Schema({
     message: String,
-    roomid:mongoose.Schema.Types.ObjectId,
+    roomid:{type:mongoose.Schema.Types.ObjectId,
+        ref:'messageRoom'},
     name:String,
     timestamp:{
-        type:date,
+        type:Date,
         default:Date.now
     },
     received:Boolean
